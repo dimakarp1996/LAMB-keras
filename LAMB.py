@@ -1,15 +1,4 @@
 class LAMB(Optimizer):
-    """Stochastic gradient descent optimizer.
-    Includes support for momentum,
-    learning rate decay, and Nesterov momentum.
-    # Arguments
-        lr: float >= 0. Learning rate.
-        momentum: float >= 0. Parameter that accelerates SGD
-            in the relevant direction and dampens oscillations.
-        decay: float >= 0. Learning rate decay over each update.
-        nesterov: boolean. Whether to apply Nesterov momentum.
-    """
-
     def __init__(self, lr, lamb=0.01,beta_1=0.9,
                  beta_2=0.999, eps=1e-6, **kwargs):
         super(LAMB, self).__init__(**kwargs)
