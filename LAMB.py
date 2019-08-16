@@ -41,7 +41,7 @@ class LAMB(Optimizer):
             r = r1/r2
             lr_batch=  r*self.lr
       
-            new_p = p - lr_batch*((mhat_t / K.pow(v_t+self.eps,0.5))+ self.lamb*p)
+            new_p = p - lr_batch*((mhat_t / K.pow(vhat_t+self.eps,0.5))+ self.lamb*p)
             if getattr(p, 'constraint', None) is not None:
                         new_p= p.constraint(new_p)
             self.updates.append(K.update(p,new_p))
